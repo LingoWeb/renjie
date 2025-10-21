@@ -1,0 +1,1761 @@
+/* ===========================================
+   服務項目頁面樣式
+   =========================================== */
+
+/* 服務項目頁面整體佈局 */
+.services-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+/* 服務分類導航列 */
+.services-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* 服務分類按鈕樣式 */
+.services-categories a {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #374151;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    margin: 0 0.25rem;
+    font-weight: 500;
+}
+
+/* 服務分類按鈕懸停效果 */
+.services-categories a:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 服務分類按鈕啟用狀態 */
+.services-categories a.is-active {
+    background: #111827;
+    color: #ffffff;
+    border-color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar ul {
+    list-style: none;
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar a {
+    color: #374151;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* 上方分類列文字樣式 */
+.services-sidebar a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* 目前選取中的分類高亮 */
+/* 上方分類列文字樣式 */
+.services-sidebar a.is-active {
+    background: #e5e7eb;
+    color: #111827;
+    font-weight: 600;
+}
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* 上方分類列文字樣式 */
+.service-block {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 上方分類列文字樣式 */
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+/* 上方分類列文字樣式 */
+.service-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 上方分類列文字樣式 */
+.service-item {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+    position: relative;
+    min-height: 300px;
+}
+
+/* 上方分類列文字樣式 */
+.item-content {
+    flex: 1;
+    text-align: center;
+    display: none;
+}
+
+.service-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* 了解更多連結按鈕化 */
+.more-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.more-link:hover {
+    color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* 動畫速度微調 */
+.reveal {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 服務卡片縮圖 */
+.item-thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    background: #e5e7eb;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 滑鼠移入卡片動畫 */
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 捲動 Reveal 動畫 */
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 992px) {
+    .services-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .services-sidebar {
+        position: static;
+    }
+}
+
+/* ===========================================
+   重置和基礎樣式
+   =========================================== */
+
+/* 全域重置樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基礎字體和版面設定 */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 容器樣式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===========================================
+   導航欄樣式
+   =========================================== */
+
+/* 導航欄主容器 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 導航欄樣式 */
+.nav-logo h2 {
+    color: #2563eb;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+/* 導航欄樣式 */
+.nav-logo a:hover h2 {
+    color: #1d4ed8;
+}
+
+/* 導航欄樣式 */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+/* 導航欄樣式 */
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* 導航欄文字樣式 */
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* 導航欄文字樣式 */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #2563eb;
+    transition: width 0.3s ease;
+}
+
+/* 導航欄文字樣式 */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 導航欄漢堡選單樣式 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* 導航欄漢堡選單樣式 */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* ===========================================
+   首頁區塊樣式
+   =========================================== */
+
+/* 首頁 Hero 區塊 */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+/* 首頁背景圖片樣式 */
+.hero>img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+/* ===========================================
+   按鈕樣式
+   =========================================== */
+
+/* 基礎按鈕樣式 */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 主要按鈕樣式 */
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+/* 主要按鈕懸停效果 */
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* 次要按鈕樣式 */
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* 次要按鈕懸停效果 */
+.btn-secondary:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+
+/* ===========================================
+   區塊標題樣式
+   =========================================== */
+
+/* 區塊標題樣式 */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #1f2937;
+    position: relative;
+}
+
+/* 區塊標題底線裝飾 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* ===========================================
+   關於我們區塊樣式
+   =========================================== */
+
+/* 關於我們區塊 */
+.about {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.about-stats {
+    display: grid;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* 關於我們頁面樣式 */
+.page-header {
+    position: relative;
+    min-height: 60vh;
+    padding: 8rem 0 4rem;
+    /* 保留導覽高度的間距 */
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-header>img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 圖片滿版 */
+    object-position: center;
+    z-index: 0;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+    /* 疊在圖片上方 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(60vh - 120px);
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111111;
+    /* 黑色文字 */
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #111111;
+    /* 黑色文字 */
+}
+
+.about-main {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/about/about.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.about-main .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.about-main .about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-main .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-stats-section {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.about-stats-section .about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* ===========================================
+   願景區塊樣式
+   =========================================== */
+
+/* 願景區塊 */
+.vision {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.vision-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    margin-top: 2rem;
+}
+
+.vision-main {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #1f2937;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.vision-detail {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vision-detail p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-indent: 2em;
+}
+
+.vision-detail strong {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ===========================================
+   創辦人的話區塊樣式
+   =========================================== */
+
+/* 創辦人的話區塊 */
+.founder-message {
+    padding: 5rem 0;
+    background: white;
+}
+
+.founder-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.founder-text {
+    margin-top: 2rem;
+}
+
+.founder-quote {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #2563eb;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+}
+
+.founder-detail {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.founder-detail p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-indent: 2em;
+}
+
+.founder-signature {
+    text-align: right;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.signature-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.signature-title {
+    font-size: 1rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* ===========================================
+   價值觀區塊樣式
+   =========================================== */
+
+/* 價值觀區塊 */
+.values {
+    padding: 5rem 0;
+    background: white;
+}
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.value-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 220px;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.value-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ===========================================
+   團隊區塊樣式
+   =========================================== */
+
+/* 團隊區塊 */
+.team {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+/* 團隊圖片容器 */
+.team-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 導航欄活動狀態 */
+.nav-link.active {
+    color: #2563eb;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* 服務區塊樣式 */
+.services {
+    padding: 5rem 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.service-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ===========================================
+   聯絡我們頁面樣式
+   =========================================== */
+
+/* 聯絡我們主要區塊 */
+.contact-main {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info-section h2,
+.contact-form-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.contact-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    color: #2563eb;
+    width: 40px;
+    text-align: center;
+}
+
+.contact-info-item h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.contact-info-item p {
+    color: #6b7280;
+    margin: 0;
+}
+
+.form-description {
+    color: #6b7280;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===========================================
+   QR Code 樣式
+   =========================================== */
+
+/* QR Code 容器 */
+.qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrcode-item {
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.qrcode-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.qrcode img {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+   地圖區塊樣式
+   =========================================== */
+
+/* 地圖區塊 */
+.map-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.map-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.map-container .map-item {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.map-container .map-item h4 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* ===========================================
+   響應式設計 - 平板和手機版
+   =========================================== */
+
+@media (max-width: 768px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info-section h2,
+    .contact-form-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .map-container {
+        flex-direction: column;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+
+    .qrcode img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* ===========================================
+   頁腳樣式
+   =========================================== */
+
+/* 頁腳主容器 */
+.footer {
+    background: #1f2937;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #f9fafb;
+}
+
+.footer-section p {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #2563eb;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* Footer 內的聯絡我們三欄（LOGO / 詳細資訊 / 地圖） */
+.footer .contact-3col {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 20px;
+}
+
+.footer .contact-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(1.1);
+}
+
+.footer .contact-details h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f9fafb;
+    margin-bottom: 0.5rem;
+}
+
+.footer .contact-details p {
+    color: #d1d5db;
+    margin-bottom: 0.35rem;
+}
+
+/* 頁腳聯絡區：連結改白色、移除底線 */
+.footer .contact-3col a,
+.footer .contact-details a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer .contact-3col a:hover,
+.footer .contact-details a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
+}
+
+.footer .contact-map {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.footer .map-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* 下方地圖文字顏色 */
+.footer .map-item h4 {
+    color: #0e0b0b;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 下方地圖樣式長度 */
+.footer .contact-map iframe {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+    .footer .contact-3col {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:
+            "logo details"
+            "map map";
+    }
+
+    .footer .contact-logo {
+        grid-area: logo;
+    }
+
+    .footer .contact-details {
+        grid-area: details;
+    }
+
+    .footer .contact-map {
+        grid-area: map;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer .contact-3col {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "details"
+            "map";
+    }
+
+    .footer .contact-map {
+        flex-direction: column;
+    }
+
+    .footer .contact-map iframe {
+        height: 160px;
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-main .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-main .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-main .about-text p {
+        font-size: 1.1rem;
+    }
+
+    .vision-main {
+        font-size: 1.3rem;
+    }
+
+    .vision-detail p {
+        font-size: 1rem;
+        text-indent: 1.5em;
+    }
+
+    /* 創辦人的話 - 手機版 */
+    .founder-quote {
+        font-size: 1.4rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .founder-detail p {
+        font-size: 1rem;
+        text-indent: 1.5em;
+    }
+
+    .signature-name {
+        font-size: 1.1rem;
+    }
+
+    /* 會員登入表單 - 手機版 */
+    .member-login-section {
+        padding: 3rem 0;
+    }
+
+    .login-container {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+        max-width: none;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
+
+    .captcha-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .captcha-container input {
+        max-width: none;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-login,
+    .btn-register {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .forgot-password {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .about-stats-section .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .team-image {
+        max-width: 100%;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* 手機版分類列改為垂直排列 */
+    .services-categories {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .services-categories a {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* 手機版服務項目改為垂直排列 */
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .item-thumb {
+        width: 100%;
+        height: 200px;
+    }
+
+    .item-content {
+        text-align: center;
+    }
+}
+
+/* ===========================================
+   響應式設計 - 小螢幕手機版
+   =========================================== */
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .about-stats-section .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        padding: 1.5rem;
+    }
+
+    .team-member {
+        padding: 1.5rem;
+    }
+}
+
+/* ===========================================
+   動畫效果
+   =========================================== */
+
+/* 淡入上移動畫 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 進場動畫：文字由左、圖片由右 */
+.slide-in-left,
+.slide-in-right {
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.slide-in-left {
+    transform: translateX(-40px);
+}
+
+.slide-in-right {
+    transform: translateX(40px);
+}
+
+.in-view.slide-in-left,
+.in-view.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================================
+   會員登入表單樣式
+   =========================================== */
+
+/* 會員登入區塊 */
+.member-login-section {
+    padding: 5rem 0;
+    background: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 驗證碼區塊 */
+.captcha-group {
+    margin-bottom: 2rem;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.captcha-container input {
+    flex: 1;
+    max-width: 120px;
+}
+
+.captcha-image {
+    width: 80px;
+    height: 40px;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.captcha-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 70%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 70%, transparent 70%);
+    background-size: 20px 20px;
+}
+
+.captcha-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #dc2626;
+    z-index: 1;
+    position: relative;
+}
+
+.refresh-captcha {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.refresh-captcha:hover {
+    text-decoration: underline;
+}
+
+/* 按鈕區塊 */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-login {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background: #b91c1c;
+}
+
+.btn-register {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background: #2563eb;
+}
+
+.forgot-password {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
